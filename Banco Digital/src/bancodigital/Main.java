@@ -14,6 +14,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		/**
+		 * @author Rafael Ribeiro Estrela
+		 * @Date 14/01/2022
+		 */
+		
 		Scanner sc = new Scanner(System.in);
 		
 		Estado estado = new Estado("MT", "Mato Grosso");
@@ -27,17 +32,6 @@ public class Main {
 		Agencia agencia = new Agencia("Agencia Boa Vista", "AG-001", new Telefone("6530555555"), endereco_agencia, banco);
 		
 		banco.adicionarAgencia(agencia);
-		
-		/*
-		Cliente cliente = new Cliente("Carlos", "carlos@gmail.com", "04478598754", 27, "M");
-		cliente.adicionarTelefone(new Telefone("65981447799"));
-		cliente.adicionarEndereco(new Endereco("Rua 10", "7", "Centro", "78098785", cidade));
-		
-		Conta contaCorrente = new ContaCorrente("C-0001", cliente, agencia);
-		Conta contaPoupanca = new ContaPoupanca("P-0001", cliente, agencia);
-		
-		System.out.println(contaCorrente.getClass().getSimpleName());
-		*/
 		
 		int decisao = -1;
 		
