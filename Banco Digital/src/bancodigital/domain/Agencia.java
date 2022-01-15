@@ -7,8 +7,12 @@ public class Agencia {
 	
 	private String nome;
 	private String codigo;
+	
 	private Telefone telefone;
+	
 	private Endereco endereco;
+	
+	private Banco banco;
 	
 	private List<Conta> contas = new ArrayList<>();
 	
@@ -16,12 +20,13 @@ public class Agencia {
 		
 	}
 
-	public Agencia(String nome, String codigo, Telefone telefone, Endereco endereco) {
+	public Agencia(String nome, String codigo, Telefone telefone, Endereco endereco, Banco banco) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
 		this.telefone = telefone;
 		this.endereco = endereco;
+		this.banco = banco;
 	}
 
 	public String getNome() {
@@ -60,6 +65,14 @@ public class Agencia {
 		return contas;
 	}
 	
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
+	}
+
 	public void adicionarConta(Conta conta) {
 		contas.add(conta);
 	}
@@ -92,8 +105,10 @@ public class Agencia {
 	@Override
 	public String toString() {
 		return "Agencia [nome=" + nome + ", codigo=" + codigo + ", telefone=" + telefone + ", endereco=" + endereco
-				+ "]";
+				+ ", banco=" + banco + "]";
 	}
+
+	
 	
 	
 	

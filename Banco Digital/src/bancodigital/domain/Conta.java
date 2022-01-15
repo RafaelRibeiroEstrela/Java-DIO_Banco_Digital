@@ -1,21 +1,25 @@
 package bancodigital.domain;
 
-public class Conta {
+import bancodigital.domain.interfaces.ContaOperacoes;
+
+public abstract class Conta implements ContaOperacoes{
 	
 	private Integer numero;
-	private Double saldo;
+	private Double saldo = 0.0;
 	
 	private Cliente cliente;
+	
+	private Agencia agencia;
 	
 	public Conta() {
 		
 	}
 
-	public Conta(Integer numero, Double saldo, Cliente cliente) {
+	public Conta(Integer numero, Cliente cliente, Agencia agencia) {
 		super();
 		this.numero = numero;
-		this.saldo = saldo;
 		this.cliente = cliente;
+		this.agencia = agencia;
 	}
 
 	public Integer getNumero() {
@@ -36,6 +40,36 @@ public class Conta {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	public Agencia getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
+
+	@Override
+	public void sacar(Double valor) {
+		if (valor > saldo) {
+			System.out.println("ERRO: O VALOR A SER SACADO É MENOR QUE O SEU SALDO");
+		}else {
+			saldo -= valor;
+			System.out.println("Saque realizado com sucesso");
+		}
+	}
+
+	@Override
+	public void depositar(Double valor) {
+		saldo += valor;
+		System.out.println("Deposito realizado com sucesso");
+	}
+
+	@Override
+	public void transferir(Conta conta, Double valor) {
+		sacar(valor);
+		conta.depositar(valor);
 	}
 
 	@Override
@@ -62,30 +96,12 @@ public class Conta {
 			return false;
 		return true;
 	}
-	
-	public void sacar(double valor) {
-		saldo -= valor;
-		
-	}
 
-	public void depositar(double valor) {
-		saldo += valor;
-		
-	}
-
-	public void transferir(double valor, Conta contaDestino) {
-		contaDestino.depositar(valor);
-		sacar(valor);
-	}
-
-	public String imprimirExtrato() {
-		return "Conta [numero=" + numero + ", saldo=" + saldo + "]";
-	}
-	
 	@Override
 	public String toString() {
-		return "Conta [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + "]";
+		return "Conta [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + ", agencia=" + agencia + "]";
 	}
+	
 	
 	
 

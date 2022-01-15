@@ -9,7 +9,7 @@ public class Cliente {
 	private String email;
 	private String cpf;
 	private Integer idade;
-	private Character sexo;
+	private String sexo;
 	
 	private List<Telefone> telefones = new ArrayList<>();
 	
@@ -19,7 +19,7 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nome, String email, String cpf, Integer idade, Character sexo) {
+	public Cliente(String nome, String email, String cpf, Integer idade, String sexo) {
 		super();
 		this.nome = nome;
 		this.email = email;
@@ -60,11 +60,11 @@ public class Cliente {
 		this.idade = idade;
 	}
 
-	public Character getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(Character sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 
@@ -114,7 +114,7 @@ public class Cliente {
 		return "Cliente [nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", idade=" + idade + ", sexo=" + sexo
 				+ ", telefones=" + telefones + ", enderecos=" + enderecos + "]";
 	}
-	
+
 	
 	
 	

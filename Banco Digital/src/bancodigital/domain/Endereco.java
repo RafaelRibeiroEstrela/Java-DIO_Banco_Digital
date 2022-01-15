@@ -92,6 +92,8 @@ public class Endereco {
 		return "Endereco [rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep + ", cidade="
 				+ cidade + "]";
 	}
+
+	
 	
 	
 	

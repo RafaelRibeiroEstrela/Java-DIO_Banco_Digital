@@ -4,12 +4,12 @@ import bancodigital.domain.Conta;
 
 public interface ContaOperacoes {
 	
-	void sacar(double valor);
+	void sacar(Double valor);
 	
-	void depositar(double valor);
+	void depositar(Double valor);
 	
-	void transferir(double valor, Conta contaDestino);
+	void transferir(Conta conta, Double valor);
 	
-	void imprimirExtrato();
+	void mostrarSaldo();
 
 }

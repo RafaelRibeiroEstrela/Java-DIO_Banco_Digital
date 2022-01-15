@@ -7,17 +7,17 @@ public class Banco {
 	
 	private String nome;
 	private String codigo;
+	
 	private List<Agencia> agencias = new ArrayList<>();
 
 	public Banco() {
 		
 	}
 	
-	public Banco(String nome, String codigo, List<Agencia> agencias) {
+	public Banco(String nome, String codigo) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
-		this.agencias = agencias;
 	}
 
 	public String getNome() {
@@ -43,5 +43,12 @@ public class Banco {
 	public void adicionarAgencia(Agencia agencia) {
 		agencias.add(agencia);
 	}
+
+	@Override
+	public String toString() {
+		return "Banco [nome=" + nome + ", codigo=" + codigo + "]";
+	}
+	
+	
 
 }
