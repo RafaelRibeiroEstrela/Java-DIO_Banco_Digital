@@ -49,20 +49,23 @@ public class Main {
 			decisao = sc.nextInt();
 			sc.nextLine();
 			
-			if (decisao == 1) {
-				AgenciaOperacoes.criarConta(sc, cidade, agencia);
-			}else if (decisao == 2) {
-				AgenciaOperacoes.sacar(sc, agencia);
-			}else if (decisao == 3) {
-				AgenciaOperacoes.depositar(sc, agencia);
-			}else if (decisao == 4) {
-				AgenciaOperacoes.transferir(sc, agencia);
-			}else if (decisao == 5) {
-				AgenciaOperacoes.verSaldo(sc, agencia);
-			}else if (decisao == 0) {
-				break;
-			}else{
-				System.out.println("COMANDO INVALIDO \n");
+			switch (decisao) {
+			
+				case 1:
+					AgenciaOperacoes.criarConta(sc, cidade, agencia);
+				case 2:
+					AgenciaOperacoes.sacar(sc, agencia);
+				case 3:
+					AgenciaOperacoes.depositar(sc, agencia);
+				case 4:
+					AgenciaOperacoes.transferir(sc, agencia);
+				case 5:
+					AgenciaOperacoes.verSaldo(sc, agencia);
+				case 0:
+					break;
+				default:
+					System.out.println("COMANDO INVALIDO \n");
+						
 			}
 			
 		}
